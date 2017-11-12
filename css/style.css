@@ -1,0 +1,623 @@
+@font-face {
+    font-family: 'Bebas Neue Regular';
+    src: url('/font/BebasNeueRegular.ttf');
+}
+@import {
+    url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+}
+
+body {
+    margin: auto;
+    background-color: #F5F0EB;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a {
+    color: #625bab;
+    text-decoration: none;
+}
+
+#site-container {
+    padding: 0 5% 5% 5%;
+    margin: 0 5% 0 5%;
+}
+#nav, #resp-menu-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+#resp-menu-options {
+    justify-content: flex-end;
+    height: 50px;
+}
+#nav ul, #resp-menu-options ul {
+    width: 100%;
+    padding: 0;
+}
+#nav ul div, #resp-menu-options ul div {
+    display: inline;
+}
+#nav ul li, #resp-menu-options li {
+    display: inline;
+    color: black;
+    font-weight: bold;
+    font-family: 'Bebas Neue Regular';
+    font-size: 1.2em;
+    letter-spacing: 2;
+    padding:0;
+    margin: 0 3% 0 3%;
+    
+}
+#resp-menu-options li {
+    font-size: 1em;
+}
+
+#nav #resp-menu, #resp-menu-options {
+    display: none;
+}
+
+#resp-menu i {
+    margin-right: 1%;
+}
+#nav ul div li:hover, #resp-menu-options div li:hover {
+    cursor: pointer;
+    transition: 2s;
+    border-bottom: 1px solid #000;
+}
+#s-media {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+}
+#s-media img {
+    padding-left: 3%;
+    padding-right 3%;
+}
+#s-media img:hover {
+    filter: opacity(80%);
+    cursor: pointer;
+}
+#search {
+    display: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 1%;
+    width: 20%;
+}
+#search input {
+    width: 70%;
+    border-style: none;
+}
+#footer {
+    height: 100px;
+    background-color: #2a2a2a;
+    padding: 1%;
+}
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1%;
+    height: 225px; /*25%;*/
+}
+#logo-container img {
+    cursor: pointer;
+}
+#posts {
+    margin-top: 0;
+}
+#home-sep {
+    display: flex;
+    align-items: center;
+    padding: 0 1% 0 1%;
+    margin:0;
+    clear: both;
+}
+#home-sep div:first-child {
+    display: inline;
+    width: 11%;
+    margin-right: .5%;
+}
+#home-sep div {
+    width:89%;
+}
+#home-sep div span {
+    font-family: "Bebas Neue Regular", sans-serif;
+    font-size: 2.5em;
+    width: 10%;
+}
+#home-sep hr {
+    display: block;
+    width: 100%;
+}
+#lower-row, .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    /*margin-top: 5% 5% 5% 5%;*/
+}
+.row:first-child {
+    margin-top: 0;
+    margin-bottom: 5%;
+    flex-wrap: nowrap;
+    /*height: 50%;*/
+}
+.post-card, .recent-card {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    width: 23%;
+    height: auto;
+    margin: 5% 1% 0 1%;
+    /*padding: 1% 0 1% 0;*/
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.recent-card {
+    width: 50%;
+    height: auto;
+    padding-top: 0;
+    margin-top: 0;
+}
+.post-card:hover, .recent-card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: pointer;
+}
+.title-and-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title-and-date .title-container {
+    width: 65%;
+    font-size: 2.5em;
+}
+.title-and-date .date-container, .read-more {
+    width: 35%;
+    font-size: 2.5em;
+}
+.recent-card .desc-container {
+    font-size: 1.2em;
+}
+.date-container, .title-container, .read-more {
+    font-family: 'Bebas Neue Regular';
+    font-size: 2em;
+}
+.date-container, .title-container, .desc-container {
+    width: 95%;
+    padding: 2.5%;
+}
+.desc-container {
+    padding-top: 0;
+}
+.date-container {
+    text-align: right;
+}
+.image-container {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.recent-card .image-container {
+    height: 325px;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    color: white;
+    opacity: 1;
+}
+
+
+
+/* POST STYLES */
+#post-container {
+    background-color: white;    
+    margin: 0 1% 0 1%;
+    padding: 5%;
+}
+#post-date {
+    font-size: 1.3;
+}
+#post-title, #post-date, #post-content {
+    font-family: 'Bebas Neue Regular';
+    font-size: 1.8em;
+}
+#post-date, #gallery-title, #comments-title {
+    font-size: 1em;
+}
+#post-date {
+    margin-top: 2%;
+}
+#gallery-title, #comments-title {
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+#comments-title {
+    margin-top: 3%;
+}
+#post-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+#left-side, #right-side {
+    display: flex;
+}
+#left-side {
+    width: 45%;
+    margin-right: 5%;
+}
+#right-side {
+    flex-direction: column;
+    width: 45%;
+    margin-left: 5%;
+}
+#image-wrapper {
+    width: 100%;
+    position: relative;
+}
+#image-gallery {
+    height: 500px;
+    overflow-y: scroll;  
+}
+.gallery-item {
+    width: 20%;
+    margin: 1%;
+}
+.gallery-item img {
+    width: 100.5%;
+}
+#post-desc {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: .5em;
+}
+#post-desc img {
+    width: 15px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+#post-desc p {
+    text-align: left !important;
+}
+.post-sep {
+    color: rgba(0,0,0,0.2);
+}
+.post-sep:last-child {
+    display: block;
+}
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#video {
+    padding-left: 1%;
+}
+
+/* RESPONSIVE STYLES */
+@media only screen and (max-width: 1835px) {
+    #site-container {
+        padding: 0 3% 5% 3%;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 8% 0 8%;
+    }
+}
+@media only screen and (max-width: 1750px) {
+    #site-container {
+        padding: 0 1% 5% 1%;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 6% 0 6%;
+    }
+}
+@media only screen and (max-width: 1670px) {
+    #site-container {
+        padding: 0 0 5% 0;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 5% 0 5%;
+    }
+}
+@media only screen and (max-width: 1630px) {
+    #site-container {
+        padding: 0 3% 5% 3%;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 8% 0 8%;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+    .row:first-child {
+        flex-wrap: nowrap;
+    }
+    .post-card {
+        width: 31%;
+    }
+    .title-and-date .title-container, .title-and-date .date-container, #home-sep div span  {
+        font-size: 2.0em;
+    }
+    .recent-card .desc-container {
+        font-size: 1.1em;
+    }
+    .post-card:nth-child(7), .post-card:last-child {
+        width: 48%;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    #site-container {
+        padding: 0 2% 5% 2%;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 7% 0 7%;
+    }
+    
+}
+@media only screen and (max-width: 1370px) {
+    .post-card {
+        width: 48%;
+    }
+    #home-sep div:first-child {
+        width: 13%;
+    }
+    
+}
+@media only screen and (max-width: 1335px) {
+    .title-and-date {
+        flex-direction: column;
+    }
+    .title-and-date div {
+        width: 100%;
+        text-align: left;
+    }
+    .row .date-container {
+        padding-top: 0;
+        font-size: 1.5em;
+    }
+    .row .title-container {
+        width:100%;
+        padding-bottom: 1%;
+    }
+    .row .date-container {
+        width:100%;
+        padding-bottom: 1%;
+    }
+    #nav ul {
+        width: 85%;
+    }
+    
+}
+@media only screen and (max-width: 1350px) { 
+    #nav ul {
+        width: 83%;
+    }
+    #s-media {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #home-sep div:first-child {
+        width: 15%;
+    }
+    
+}
+@media only screen and (max-width: 1185px) {
+    #nav ul li {
+        display: none;
+    }
+    #nav #resp-menu {
+        display: inline;
+        width: 30%;
+    }
+    #nav ul {
+        width: 45%;
+    }
+    #s-media {
+        width: 22%;
+    }
+}
+@media only screen and (max-width: 1075px) {
+    #home-sep div:first-child {
+        width: 18%;
+    }
+    
+}
+@media only screen and (max-width: 975px) {
+    #home-sep div:first-child {
+        width: 20%;
+    }
+    #s-media {
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 840px) { 
+    #header {
+        display: flex;
+        justify-content: center;
+    }
+    #home-sep div:first-child {
+        width: 23%;
+    }
+    #logo-container {
+        width: 100%;
+    }
+    #logo-container img {
+        width: 100%;
+    }
+    .row:first-child {
+        flex-wrap: wrap;
+        margin-bottom: 10%;
+    }
+    .recent-card {
+        width: 100%;
+    }
+    .recent-card:first-child {
+        margin-bottom: 10%;
+    }
+    .post-card {
+        width: 98%;
+        margin-top: 10%;
+    }
+    .post-card:first-child {
+        margin-top: 10%;
+    }
+    #site-container {
+        padding: 0 5% 10% 5%;
+    }
+    #nav, #resp-menu-options  {
+        padding: 0 10% 0 10%;
+    }
+    #s-media {
+        width: 29%;
+    }
+    .post-card:nth-child(7), .post-card:last-child {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 780px) {
+    #home-sep div:first-child {
+        width: 27%;
+    }   
+    #s-media {
+        width: 33%;
+    }
+    #resp-menu-options {
+        height: auto;
+    }
+    #resp-menu-options li {
+        display: inline-block;
+        padding-top: 3%;
+    }
+    #resp-menu-options ul div  {
+        display: block;
+    }
+    
+}
+@media only screen and (max-width: 730px) {
+    #s-media {
+        width: 36%;
+    }
+    #post-title {
+        font-size: 1.6em;
+    }
+    #post-date, #gallery-title {
+        font-size: .8em;
+    }
+    #post-date {
+        margin-top: 1%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #logo-container {
+        height: 150px;
+    }   
+    #post-title {
+        font-size: 1.3em;
+    }
+}
+@media only screen and (max-width: 685px) {
+    #home-sep div:first-child {
+        width: 35%;
+    }
+}
+@media only screen and (max-width: 575px) {
+    #home-sep div:first-child {
+        width: 40%;
+    }
+    .image-container {
+        height: 215px;
+    }
+    .recent-card .image-container {
+        height: 255px;
+    }
+    #s-media {
+        width: 45%;
+    }
+    #resp-menu-options li {
+        padding-top: 4%;
+    }
+
+}
+@media only screen and (max-width: 550px) {
+    #home-sep div:first-child {
+        width: 45%;
+    }
+    
+}
+@media only screen and (max-width: 510px) {
+    #home-sep div:first-child {
+        width: 50%;
+    }
+    
+}
+@media only screen and (max-width: 470px) {
+    #home-sep div:first-child {
+        width: 55%;
+    }
+    #s-media {
+        width: 50%;
+    }
+    
+}
+@media only screen and (max-width: 450px) {
+    #home-sep div:first-child {
+        width: 65%;
+    }
+}
+
+
+/* post responsive styles*/
+@media only screen and (max-width: 1185px) {
+    #post-content {
+        flex-wrap: wrap;
+    }
+    #post-info {
+        width: 100%;
+    }
+    #image-gallery {
+        width: 100%;
+    }
+    #left-side {
+        width: 100%;
+        padding-left: 1%;
+        margin-bottom: 3%;
+    }
+    #right-side {
+        width: 100%;
+        margin: 0 5% 0 0;
+    }
+}
+@media only screen and (max-width: 613px) {
+    #image-gallery {
+        height: 300px /*!important*/;
+        overflow-y: scroll;  
+    }
+    .gallery-item {
+        width: 42.5%;
+        margin: 1%;
+    }
+}
